@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моё Портфолио</title>
+    <title>Портфолио - Физическое развитие дошкольников с ОВЗ</title>
+    <meta name="description" content="Методическое портфолио по физическому развитию детей дошкольного возраста с ОВЗ">
+    <meta name="author" content="Спиридонова Екатерина Дмитриевна">
     <style>
         :root {
             --bg-color: #F7F9FC;
@@ -25,6 +27,7 @@
             display: flex;
         }
 
+        /* Кнопка-гамбургер */
         .menu-toggle {
             display: none;
             position: fixed;
@@ -73,6 +76,7 @@
 
         .menu-overlay.active { display: block; opacity: 1; }
 
+        /* Боковое меню */
         .sidebar {
             width: 260px;
             background-color: var(--sidebar-bg);
@@ -160,6 +164,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Титульный раздел */
         .title-page { text-align: center; padding-top: 20px; }
         .title-badge {
             display: inline-block;
@@ -429,6 +434,7 @@
         .equipment-list li { padding-left: 20px; position: relative; font-size: 0.98rem; line-height: 1.6; color: var(--text-secondary); }
         .equipment-list li::before { content: "•"; position: absolute; left: 0; color: var(--hover-color); font-weight: bold; }
 
+        /* Таблица структуры занятия */
         .structure-table { background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; margin-bottom: 30px; }
         .table-header { display: grid; grid-template-columns: 1fr 2.5fr 1fr; background-color: var(--hover-color); color: #FFFFFF; font-weight: 600; font-size: 0.95rem; }
         .table-header > div { padding: 14px 20px; }
@@ -495,6 +501,7 @@
         .clean-list li { list-style: none !important; padding-left: 15px; position: relative; font-size: 0.98rem; line-height: 1.65; color: var(--text-secondary); }
         .clean-list li::before { content: "—"; position: absolute; left: 0; color: var(--border-color); }
 
+        /* Таблица оборудования */
         .equip-table { background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; margin-bottom: 30px; }
         .equip-row { display: grid; grid-template-columns: 2fr 1fr; border-bottom: 1px solid var(--border-color); transition: background-color 0.3s ease; }
         .equip-row:last-child { border-bottom: none; }
@@ -533,6 +540,7 @@
         .method-sublist li { list-style: none !important; padding-left: 18px; position: relative; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); }
         .method-sublist li::before { content: "—"; position: absolute; left: 0; color: var(--hover-color); font-weight: bold; }
 
+        /* Таблица нормативов */
         .norm-table { background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; margin-bottom: 25px; }
         .norm-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; border-bottom: 1px solid var(--border-color); }
         .norm-row:last-child { border-bottom: none; }
@@ -546,6 +554,7 @@
         .norm-low { background-color: rgba(221, 107, 32, 0.05); }
         .norm-low .norm-cell:first-child { color: #C05621; }
 
+        /* Таблица бланка - с горизонтальной прокруткой */
         .record-table-wrapper {
             overflow-x: auto;
             border-radius: 10px;
@@ -643,6 +652,7 @@
         .value-text { font-size: 0.98rem; line-height: 1.65; color: var(--text-secondary); padding-top: 4px; }
         .value-text strong { color: var(--text-primary); font-weight: 600; }
 
+        /* Адаптивность */
         @media (max-width: 900px) {
             .menu-toggle { display: block; }
             
@@ -679,6 +689,7 @@
             .mini-game-label { min-width: auto; }
             .value-item { flex-direction: column; gap: 10px; }
             
+            /* Таблица структуры занятия - карточный вид */
             .structure-table { background-color: transparent; border: none; }
             .table-header { display: none; }
             .table-row {
@@ -706,6 +717,7 @@
             .table-part { color: var(--hover-color); }
             .table-time { text-align: right; }
             
+            /* Таблица оборудования - карточный вид */
             .equip-table { background-color: transparent; border: none; }
             .equip-row {
                 display: flex;
@@ -721,6 +733,7 @@
             .equip-cell:first-child { font-weight: 600; color: var(--text-primary); }
             .equip-cell:last-child { color: var(--hover-color); font-weight: 600; }
             
+            /* Таблица нормативов - карточный вид */
             .norm-table { background-color: transparent; border: none; }
             .norm-row {
                 display: block;
@@ -743,6 +756,7 @@
             .norm-mid { border-left: 4px solid #2B6CB0; }
             .norm-low { border-left: 4px solid #DD6B20; }
             
+            /* Таблица бланка - горизонтальная прокрутка */
             .record-table-wrapper {
                 border-radius: 10px;
                 border: 1px solid var(--border-color);
@@ -750,6 +764,62 @@
             
             .parent-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .parent-title { font-size: 1.05rem; }
+            /* Основной нумерованный список */
+            ol.steps-list {
+                counter-reset: step-counter;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            ol.steps-list > li {
+                counter-increment: step-counter;
+                position: relative;
+                padding-left: 45px; /* Отступ для цифры */
+                margin-bottom: 15px;
+                line-height: 1.5;
+            }
+
+            ol.steps-list > li::before {
+                content: counter(step-counter);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 28px;
+                height: 28px;
+                background-color: #2b6cb0; /* Синий цвет как на скриншоте */
+                color: white;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 28px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+/* Вложенный маркированный список */
+            ul.sub-list {
+                list-style: none;
+                padding-left: 10px;
+                margin-top: 10px;
+                margin-bottom: 0;
+                }
+
+            ul.sub-list > li {
+                position: relative;
+                padding-left: 25px; /* Отступ для точки */
+                margin-bottom: 8px;
+                line-height: 1.5;
+            }
+
+            ul.sub-list > li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                top: -2px;
+                color: #2b6cb0; /* Синяя точка */
+                font-size: 24px;
+                line-height: 1;
+            }
         }
     </style>
 </head>
@@ -770,9 +840,13 @@
             <li><a href="#annotation" onclick="scrollToSection('annotation'); toggleMenu();">Краткая аннотация</a></li>
             <li><a href="#introduction" onclick="scrollToSection('introduction'); toggleMenu();">Методическое введение</a></li>
             <li><a href="#games" onclick="scrollToSection('games'); toggleMenu();">Картотека игр</a></li>
+            <li><a href="#lesson" onclick="scrollToSection('lesson'); toggleMenu();">Конспект занятия</a></li>
+            <li><a href="#holiday" onclick="scrollToSection('holiday'); toggleMenu();">Сценарий праздника</a></li>
+            <li><a href="#relay" onclick="scrollToSection('relay'); toggleMenu();">Активный отдых</a></li>
+            <li><a href="#diagnostics" onclick="scrollToSection('diagnostics'); toggleMenu();">Диагностика</a></li>
             <li><a href="#gymnastics" onclick="scrollToSection('gymnastics'); toggleMenu();">Утренняя гимнастика</a></li>
-            <li><a href="#about" onclick="scrollToSection('about'); toggleMenu();">Обо мне</a></li>
-            <li><a href="#contacts" onclick="scrollToSection('contacts'); toggleMenu();">Контакты</a></li>
+            <li><a href="#parents" onclick="scrollToSection('parents'); toggleMenu();">Памятка для родителей</a></li>
+            <li><a href="#conclusion" onclick="scrollToSection('conclusion'); toggleMenu();">Заключение</a></li>
         </ul>
     </nav>
 
@@ -950,6 +1024,718 @@
             </div>
         </div>
 
+        <div class="section-block" id="lesson">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span class="section-title">Конспект физкультурного занятия</span>
+                <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="section-content">
+                <div class="lesson-header-card">
+                    <div class="lesson-badges">
+                        <span class="lesson-badge">Сюжетное занятие</span>
+                        <span class="lesson-badge">Средний дошкольный возраст</span>
+                        <span class="lesson-badge">20 минут</span>
+                    </div>
+                    <h3 class="lesson-title">По мотивам сказки «Цветик-семицветик»</h3>
+                </div>
+
+                <h4 class="subsection-title">Задачи</h4>
+                <div class="tasks-grid">
+                    <div class="task-card task-health">
+                        <div class="task-label">Оздоровительные</div>
+                        <ul class="task-list">
+                            <li>Укреплять мышцы стопы и формировать правильный свод через ходьбу по канату и ребристым дорожкам.</li>
+                            <li>Развивать дыхательную систему через упражнения на глубокий вдох и длительный выдох.</li>
+                            <li>Укреплять мышечный корсет позвоночника в упражнениях лёжа на животе и стоя на четвереньках.</li>
+                        </ul>
+                    </div>
+                    <div class="task-card task-educational">
+                        <div class="task-label">Воспитательные</div>
+                        <ul class="task-list">
+                            <li>Воспитывать чувство сопереживания, желание помогать сказочным персонажам.</li>
+                            <li>Формировать умение работать в команде, соблюдать правила и очерёдность.</li>
+                            <li>Развивать воображение и эмоциональную отзывчивость через вхождение в сказочный образ.</li>
+                        </ul>
+                    </div>
+                    <div class="task-card task-corrective">
+                        <div class="task-label">Коррекционные</div>
+                        <ul class="task-list">
+                            <li>Развивать статическое и динамическое равновесие при ходьбе по ограниченной опоре.</li>
+                            <li>Корригировать пространственную ориентировку (движение с изменением направления, перестроение в круг и врассыпную).</li>
+                            <li>Развивать слуховое внимание и быстроту двигательной реакции в подвижной игре.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="subsection-title">Оборудование</h4>
+                <div class="equipment-block">
+                    <ul class="equipment-list">
+                        <li>цветик-семицветик (большой плоскостной цветок с 7 съёмными лепестками разного цвета);</li>
+                        <li>гимнастическая скамейка – 1 шт.;</li>
+                        <li>канат (3–4 м) – 1 шт.;</li>
+                        <li>дуги для подлезания – 2 шт.;</li>
+                        <li>обручи («острова») – 5 шт.;</li>
+                        <li>массажные коврики («льдины») – 7 шт.;</li>
+                        <li>мягкие кубики («льдины большие») – 4 шт.;</li>
+                        <li>конусы или кегли («айсберги») – 4–5 шт.;</li>
+                        <li>спокойная музыка для заключительной части.</li>
+                    </ul>
+                </div>
+
+                <h4 class="subsection-title">Структура занятия</h4>
+                <div class="structure-table">
+                    <div class="table-header"><div>Часть</div><div>Содержание</div><div>Дозировка</div></div>
+                    <div class="table-row"><div class="table-cell table-part">Вводная</div><div class="table-cell">Построение, ходьба, бег, перестроение в круг</div><div class="table-cell table-time">3–4 мин.</div></div>
+                    <div class="table-row"><div class="table-cell table-part">Основная</div><div class="table-cell">ОРУ без предметов, ОВД (полоса препятствий), подвижная игра</div><div class="table-cell table-time">13–14 мин.</div></div>
+                    <div class="table-row"><div class="table-cell table-part">Заключительная</div><div class="table-cell">Малоподвижная игра, дыхательное упражнение, рефлексия</div><div class="table-cell table-time">2–3 мин.</div></div>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Ход занятия</h4>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">I</span><span class="part-name">Вводная часть (3–4 минуты)</span></div>
+                    <div class="part-body">
+                        <p>Дети входят в зал, строятся в шеренгу.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Ребята, сегодня утром я нашла у дверей вот это! (Показывает Цветик-семицветик, у которого остался один лепесток). Вы узнали этот цветок?»</div></div>
+                        <div class="dialogue"><div class="speaker">Дети:</div><div class="speech">«Цветик-семицветик!»</div></div>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Правильно! Только посмотрите – почти все лепестки разлетелись по белу свету. Остался только один. А ведь это волшебный цветок, он исполняет добрые желания! Злая Вьюга узнала про это, рассердилась и разбросала лепестки по разным холодным местам. Если мы не соберём их снова, цветок потеряет свою волшебную силу и не сможет помогать тем, кто в беде. Отправимся на поиски лепестков?»</div></div>
+                        <div class="dialogue"><div class="speaker">Дети:</div><div class="speech">«Да!»</div></div>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Тогда в путь! Дорога будет трудная, холодная, через снега и льды. Готовы?»</div></div>
+
+                        <h5 class="exercise-subtitle">Ходьба и бег</h5>
+                        <ul class="movement-list">
+                            <li><strong>Ходьба в колонне по одному</strong> – «Отправляемся в путь, шагаем бодро, держим спинку прямо» (25 секунд).</li>
+                            <li><strong>Ходьба на носках, руки вверх, ладони вместе</strong> – «Идём по узкой тропинке между сугробами, тянемся вверх, чтобы не провалиться» (20 секунд).</li>
+                            <li><strong>Ходьба на пятках, руки в стороны</strong> – «Пингвины вышли на берег, качаются с боку на бок» (20 секунд).</li>
+                            <li><strong>Ходьба с высоким подниманием колен</strong> – «Перешагиваем через ледяные торосы» (15 секунд).</li>
+                            <li><strong>Бег в колонне по одному</strong> – «Побежали по ровной снежной равнине» (25 секунд).</li>
+                            <li><strong>Бег змейкой между конусами («айсбергами»)</strong> – «Огибаем айсберги, не задеваем!» (20 секунд).</li>
+                            <li><strong>Ходьба с дыханием</strong> – «Шагом идём, восстанавливаем дыхание. Вдыхаем морозный воздух носом – выдыхаем через рот тёпленьким облачком» (15 секунд).</li>
+                        </ul>
+                        <p class="part-note">Перестроение в круг.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">II</span><span class="part-name">Основная часть (13–14 минут)</span></div>
+                    <div class="part-body">
+                        <h5 class="exercise-subtitle">Общеразвивающие упражнения (ОРУ) «Согреваемся вьюге назло»</h5>
+                        <p>Дети стоят в кругу.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Стало совсем холодно, ветер задувает. Давайте согреемся, сделаем зарядку – покажем Вьюге, что мы сильные и не боимся холода!»</div></div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">1. «Потянемся к солнышку»</div>
+                            <div class="exercise-ip">И.п.: ноги на ширине плеч, руки опущены.</div>
+                            <div class="exercise-desc">1-2: подняться на носки, руки через стороны плавно вверх, потянуться к «солнышку».<br>3-4: опуститься на всю стопу, руки плавно вниз.</div>
+                            <div class="exercise-repeat">Повтор: 5 раз.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Тянемся высоко-высоко, греем ладошки в солнечных лучах. Руки прямые, спина ровная».</div>
+                        </div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">2. «Спрячемся от ветра»</div>
+                            <div class="exercise-ip">И.п.: ноги на ширине плеч, руки на поясе.</div>
+                            <div class="exercise-desc">1-2: поворот туловища вправо, правую руку отвести назад, посмотреть на неё – «ветер дует, закрываемся».<br>3-4: вернуться в и.п. То же влево.</div>
+                            <div class="exercise-repeat">Повтор: по 3 раза в каждую сторону.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Поворачиваемся энергично, руку отводим далеко. Ноги не сдвигаем, крепко стоим на месте».</div>
+                        </div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">3. «Стряхиваем снег с сапожек»</div>
+                            <div class="exercise-ip">И.п.: ноги на ширине плеч, руки на поясе.</div>
+                            <div class="exercise-desc">1-2: наклон вперёд, коснуться руками правого носка (хлопнуть по «сапожку»).<br>3-4: выпрямиться, хлопнуть в ладоши над головой. То же к левому носку.</div>
+                            <div class="exercise-repeat">Повтор: по 3 раза к каждой ноге.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Наклоняемся низко, ноги в коленях не сгибаем».</div>
+                        </div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">4. «Ледяная горка»</div>
+                            <div class="exercise-ip">И.п.: стоя на четвереньках, опора на ладони и колени.</div>
+                            <div class="exercise-desc">1-2: округлить спину вверх (как горка), голову опустить.<br>3-4: прогнуть спину вниз, голову поднять вверх, посмотреть перед собой.</div>
+                            <div class="exercise-repeat">Повтор: 5 раз.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Делаем горку высокую – спина круглая, как ледяной холм. Потом горка тает – спинка прогибается».</div>
+                        </div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">5. «Льдины сталкиваются»</div>
+                            <div class="exercise-ip">И.п.: лёжа на спине, руки вдоль туловища, ноги выпрямлены.</div>
+                            <div class="exercise-desc">1-2: подтянуть колени к груди, обхватить руками («льдины столкнулись – комок»).<br>3-4: выпрямиться, руки и ноги развести в стороны («льдины разошлись»).</div>
+                            <div class="exercise-repeat">Повтор: 5 раз.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Сжимаемся в комочек крепко-крепко. Потом расслабляемся – льдины уплывают».</div>
+                        </div>
+
+                        <div class="exercise-item">
+                            <div class="exercise-name">6. «Прыгаем через сугробы»</div>
+                            <div class="exercise-ip">И.п.: ноги вместе, руки на поясе.</div>
+                            <div class="exercise-desc">Выполнение: прыжки на двух ногах с поворотом вокруг себя вправо и влево.<br>Чередование: 15 секунд прыжков – 10 секунд ходьбы на месте с высоким подниманием колен.</div>
+                            <div class="exercise-repeat">Повтор: 3 серии.</div>
+                            <div class="method-note"><strong>Методические указания:</strong> «Прыгаем легко, как зайчики. Приземляемся мягко на носочки. Дышим носиком!»</div>
+                        </div>
+
+                        <h5 class="exercise-subtitle" style="margin-top: 30px;">Основные виды движений (ОВД) «По следам лепестков»</h5>
+                        <p>Поточный метод, 2–3 круга.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Смотрите, ребята! Пока мы грелись, я заметила следы. Это Вьюга здесь пролетала и лепестки разбрасывала. Нам нужно пройти этот трудный путь, и за каждым препятствием нас ждёт один лепесток. Готовы?»</div></div>
+                        <p>Воспитатель заранее раскладывает по 1 лепестку за каждым этапом полосы препятствий. После прохождения этапа ребёнок берёт лепесток и кладёт в общую корзинку у финиша.</p>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Этап 1. «По шаткому мостику над пропастью»</div>
+                            <div class="obstacle-desc">Ходьба по гимнастической скамейке боком приставным шагом, руки в стороны. На середине скамейки – присесть, взяться руками за края («ветер качает мостик»), встать и пройти дальше.</div>
+                            <div class="obstacle-goal"><strong>Цель:</strong> развитие равновесия, смелости, укрепление мышц ног и спины.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Этап 2. «Под ледяными сводами»</div>
+                            <div class="obstacle-desc">Подлезание под дуги (высота 50 см) правым и левым боком, не касаясь спиной.</div>
+                            <div class="obstacle-goal"><strong>Цель:</strong> развитие ловкости, ориентировки в пространстве, гибкости.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Этап 3. «По льдинам через замёрзшее озеро»</div>
+                            <div class="obstacle-desc">Прыжки на двух ногах с «льдины» на «льдину» (массажные коврики, разложенные на расстоянии 25–30 см друг от друга, 7 штук).</div>
+                            <div class="obstacle-goal"><strong>Цель:</strong> развитие прыгучести, точности приземления, укрепление свода стопы.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Этап 4. «По извилистой тропе»</div>
+                            <div class="obstacle-desc">Ходьба по канату, разложенному змейкой, руки на поясе.</div>
+                            <div class="obstacle-goal"><strong>Цель:</strong> развитие координации, профилактика плоскостопия, ориентировка в пространстве.</div>
+                        </div>
+
+                        <p class="part-note">Дети проходят полосу 2–3 круга. После каждого круга воспитатель хвалит детей и обращает внимание, сколько лепестков уже собрано.</p>
+
+                        <h5 class="exercise-subtitle" style="margin-top: 30px;">Подвижная игра «Вьюга и льдинки»</h5>
+                        <div class="mini-game-card">
+                            <div class="mini-game-row"><span class="mini-game-label">Цель:</span><span>развитие быстроты реакции, бега с увёртыванием, умения замирать по сигналу.</span></div>
+                            <div class="mini-game-row"><span class="mini-game-label">Оборудование:</span><span>обручи («домики-островки») – по количеству детей минус один.</span></div>
+                            <div class="mini-game-row"><span class="mini-game-label">Правила:</span><span>На полу разложены обручи – это «тёплые островки». Выбирается один водящий – «Вьюга» (воспитатель в первый раз, затем ребёнок). Остальные дети – «Льдинки». Звучит музыка – «Льдинки» бегают по залу врассыпную, кружатся, «летят по ветру». Как только музыка замолкает, и воспитатель кричит: «Вьюга приближается!» – все «Льдинки» должны запрыгнуть в любой обруч-«островок» (можно по 2–3 человека в один обруч) и замереть там. «Вьюга» ходит мимо и смотрит, кто шевелится. Пошевелившаяся «Льдинка» выходит из игры на один кон (садится на скамейку – «растаяла»). Через 15–20 секунд снова звучит музыка – «Вьюга улетела», игра продолжается.</span></div>
+                            <div class="mini-game-row"><span class="mini-game-label">Усложнение:</span><span>Воспитатель убирает 1–2 обруча после каждого раунда – «островки тают».</span></div>
+                            <div class="mini-game-row"><span class="mini-game-label">Продолжительность:</span><span>3–4 минуты (3–4 повтора).</span></div>
+                        </div>
+
+                        <p>После игры воспитатель достаёт ещё 2 лепестка: «Смотрите, пока мы от Вьюги прятались, она ещё два лепестка обронила! Давайте посчитаем, сколько у нас теперь?» Дети считают: шесть лепестков.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Остался последний, седьмой лепесток – самый волшебный. Где же он?»</div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">III</span><span class="part-name">Заключительная часть (2–3 минуты)</span></div>
+                    <div class="part-body">
+                        <h5 class="exercise-subtitle">Малоподвижная игра «Тёплое желание»</h5>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Ребята, седьмой лепесток – он не простой. Вьюга спрятала его не где-то далеко, а в наших сердцах. Чтобы он появился, нужно встать в круг, взяться за руки, закрыть глаза и загадать самое доброе, самое тёплое желание для всех-всех на свете».</div></div>
+                        <p>Дети встают в круг, берутся за руки, закрывают глаза. Звучит спокойная музыка. Воспитатель медленно и тихо говорит. Воспитатель незаметно достаёт последний (седьмой) лепесток и кладёт в центр круга.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Открывайте глаза! Посмотрите – наше тёплое желание растопило последний лепесток, и он вернулся к нам!»</div></div>
+
+                        <h5 class="exercise-subtitle" style="margin-top: 25px;">Рефлексия</h5>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Ребята, вы сегодня были настоящими героями! Не испугались Вьюги, прошли все испытания и собрали Цветик-семицветик. Скажите, что было самым трудным? А что самым весёлым? А кому бы вы хотели подарить волшебный цветок? Я вами очень горжусь. А теперь – пора возвращаться в группу».</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="holiday">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span class="section-title">Сценарий физкультурного праздника</span>
+                <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="section-content">
+                <div class="lesson-header-card">
+                    <div class="lesson-badges">
+                        <span class="lesson-badge">Средний дошкольный возраст</span>
+                        <span class="lesson-badge">35–40 минут</span>
+                        <span class="lesson-badge">На свежем воздухе</span>
+                    </div>
+                    <h3 class="lesson-title">«Солнечные лучики» (ко Дню защиты детей)</h3>
+                </div>
+
+                <h4 class="subsection-title">Цель</h4>
+                <div class="goal-block">укрепление здоровья и развитие дружеских взаимоотношений через совместную двигательно-игровую деятельность.</div>
+
+                <h4 class="subsection-title">Задачи</h4>
+                <div class="tasks-grid">
+                    <div class="task-card task-health">
+                        <div class="task-label">Оздоровительные</div>
+                        <ul class="task-list">
+                            <li>Укреплять здоровье детей через двигательную активность на свежем воздухе.</li>
+                            <li>Развивать выносливость, ловкость, быстроту реакции.</li>
+                        </ul>
+                    </div>
+                    <div class="task-card task-educational">
+                        <div class="task-label">Воспитательные</div>
+                        <ul class="task-list">
+                            <li>Создать радостное, праздничное настроение у детей.</li>
+                            <li>Воспитывать чувство дружбы, взаимопомощи, умения радоваться успехам товарищей.</li>
+                        </ul>
+                    </div>
+                    <div class="task-card task-corrective">
+                        <div class="task-label">Коррекционные</div>
+                        <ul class="task-list">
+                            <li>Развивать ориентировку в пространстве (движение по площадке, построения).</li>
+                            <li>Корригировать координацию движений через эстафеты с предметами.</li>
+                            <li>Активизировать внимание и быстроту двигательной реакции.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="subsection-title">Оборудование и материалы</h4>
+                <div class="equipment-block">
+                    <ul class="equipment-list">
+                        <li>жёлтые лучики из картона – 6 шт.;</li>
+                        <li>конусы-ориентиры – 6 шт.;</li>
+                        <li>мячики малые – 20 шт.;</li>
+                        <li>мячи среднего размера – 2 шт.;</li>
+                        <li>обручи – 2 шт.;</li>
+                        <li>корзины – 2 шт.;</li>
+                        <li>канат – 1 шт.;</li>
+                        <li>музыкальная колонка;</li>
+                        <li>медальки/призы.</li>
+                    </ul>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Ход праздника</h4>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">I</span><span class="part-name">Встреча и приветствие (3–4 минуты)</span></div>
+                    <div class="part-body">
+                        <p>Дети выходят на площадку и строятся полукругом. Звучит весёлая песня о лете.</p>
+                        <div class="dialogue"><div class="speaker">Ведущий:</div><div class="speech">«Здравствуйте, ребята! Здравствуйте, дорогие гости! Сегодня чудесный день – 1 июня, День защиты детей! Это ваш праздник, праздник лета, солнца, улыбок и веселья! Посмотрите, как ярко светит солнышко, оно тоже хочет с вами поиграть! Давайте позовём его к нам!»</div></div>
+                        <p>Дети зовут: <em>«Солнышко! Солнышко!»</em></p>
+                        <p>Под музыку выходит Солнышко.</p>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«Здравствуйте, мои дорогие... (вздыхает) Ой, что-то я сегодня не очень весёлое...»</div></div>
+                        <div class="dialogue"><div class="speaker">Ведущий:</div><div class="speech">«Солнышко, что случилось? Почему ты грустишь в такой прекрасный день?»</div></div>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«Налетела вредная Тучка и спрятала все мои лучики! Без них я не могу светить ярко и согревать землю. Ребята, вы поможете мне найти лучики?»</div></div>
+                        <p>Дети: <em>«Да!»</em></p>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«Тогда давайте разделимся на две команды. Каждая команда будет выполнять задания, и за каждое выполненное задание я буду получать обратно один лучик. Вы готовы?»</div></div>
+                        <p>Дети делятся на две команды: <strong>«Солнечные зайчики»</strong> и <strong>«Весёлые капельки»</strong>. Команды встают в две колонны у линии старта.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">II</span><span class="part-name">Эстафеты и конкурсы (22–25 минут)</span></div>
+                    <div class="part-body">
+                        <h5 class="exercise-subtitle">Разминка «Солнечная зарядка»</h5>
+                        <p>Солнышко проводит разминку под музыку:</p>
+                        <ul class="movement-list">
+                            <li><strong>«Тянемся к солнышку»</strong> – руки вверх, на носочки (4 раза).</li>
+                            <li><strong>«Прячемся от тучки»</strong> – наклоны вправо-влево, руки над головой «домиком» (по 3 раза).</li>
+                            <li><strong>«Собираем лучики»</strong> – наклоны вперёд, касаемся пальцами носочков (5 раз).</li>
+                            <li><strong>«Солнышко прыгает»</strong> – прыжки на двух ногах, хлопая над головой (10 секунд).</li>
+                        </ul>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«Вот мы и размялись! А теперь – за лучиками!»</div></div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 1. «Собери солнечные зайчики»</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> разноцветные малые мячи, 2 корзины, 2 обруча.<br><br><strong>Описание:</strong> на площадке рассыпаны разноцветные мячи – это «солнечные зайчики разбежались». Задача команд: по одному добежать до поляны с мячами, взять один мяч, вернуться и положить в корзину своей команды. Эстафета заканчивается, когда все мячи собраны. Побеждает команда, собравшая больше мячей.</div>
+                            <div class="obstacle-goal">После эстафеты Солнышко получает <strong>первый лучик</strong>.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 2. «Передай лучик»</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 лучика.<br><br><strong>Описание:</strong> команды встают в две шеренги. У первого в руках лучик. По сигналу дети передают его друг другу по цепочке до последнего игрока. Последний бежит в начало шеренги, встаёт первым и снова передаёт. Игра продолжается, пока первый игрок снова не окажется впереди. Чья команда быстрее.</div>
+                            <div class="obstacle-goal">Солнышко получает ещё <strong>2 лучика</strong>.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 3. «Оббеги тучку»</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 6 конусов-ориентиров, расставленных змейкой.<br><br><strong>Описание:</strong> «Тучка расставила на нашем пути препятствия. Нужно оббежать их змейкой и не задеть!» Первый игрок бежит змейкой между конусами, обегает последний, возвращается по прямой, передаёт эстафету хлопком по ладони.</div>
+                            <div class="obstacle-goal">Солнышко получает <strong>четвёртый лучик</strong>.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 4. «Солнечный прыгучий мяч»</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 мяча среднего размера.<br><br><strong>Описание:</strong> первый игрок зажимает мяч между колен и прыгает до конуса и обратно. Передаёт мяч следующему. Если мяч выпал – поднять, зажать и продолжить. Чья команда быстрее.</div>
+                            <div class="obstacle-goal">Солнышко получает <strong>пятый лучик</strong>.</div>
+                        </div>
+
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Коллективная игра «Перетягивание каната»</div>
+                            <div class="obstacle-desc">
+                                <strong>Оборудование:</strong> канат.<br><br>
+                                <div class="dialogue" style="margin: 10px 0;"><div class="speaker">Солнышко:</div><div class="speech">«Остался последний, шестой лучик – самый сильный! Чтобы его вернуть, нужно показать, какие мы дружные!»</div></div>
+                                Обе команды перетягивают канат. Солнышко останавливает игру, хвалит обе команды: <em>«Победила дружба!»</em>
+                            </div>
+                            <div class="obstacle-goal">Солнышко получает <strong>шестой лучик</strong>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">III</span><span class="part-name">Завершение праздника (5–7 минут)</span></div>
+                    <div class="part-body">
+                        <p>Солнышко собирает все 6 лучиков. Расправляет плечи, улыбается. Звучит весёлая музыка.</p>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«Ребята, спасибо вам! Вы вернули все мои лучики! Теперь я снова могу светить ярко-ярко и радовать всех!»</div></div>
+                        <div class="dialogue"><div class="speaker">Ведущий:</div><div class="speech">«Вы сегодня показали, какие вы ловкие, быстрые и дружные. С праздником вас, с Днём защиты детей!»</div></div>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«А у меня для вас сюрприз!»</div></div>
+                        <p>Дети снова собираются полукругом.</p>
+                        <div class="dialogue"><div class="speaker">Ведущий:</div><div class="speech">«Вам понравился праздник? Что было самым весёлым?»</div></div>
+                        <div class="dialogue"><div class="speaker">Солнышко:</div><div class="speech">«За вашу дружбу я дарю вам маленькие солнышки на память!»</div></div>
+                        <p>Вручаются медальки из жёлтого картона на ленточке или сладкие призы.</p>
+                        <p class="part-note">Общий танец под песню «Солнышко лучистое» или «Если весело живётся – делай так» (1,5–2 минуты).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="relay">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span class="section-title">Описание организации активного отдыха</span>
+                <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="section-content">
+                <div class="lesson-header-card">
+                    <div class="lesson-badges">
+                        <span class="lesson-badge">Средний дошкольный возраст</span>
+                        <span class="lesson-badge">Спортивная эстафета</span>
+                        <span class="lesson-badge">30–35 минут</span>
+                    </div>
+                    <h3 class="lesson-title">Организация спортивной эстафеты</h3>
+                </div>
+
+                <h4 class="subsection-title">Цель</h4>
+                <div class="goal-block">создание условий для активного отдыха и эмоциональной разрядки детей через участие в командных спортивных эстафетах, способствующих укреплению здоровья, развитию двигательных навыков и воспитанию дружеских взаимоотношений.</div>
+
+                <h4 class="subsection-title">Подготовка</h4>
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <div class="prep-title">Предварительная работа с детьми</div>
+                        <ul class="clean-list">
+                            <li>Беседа о правилах поведения во время эстафет (не толкаться, ждать своей очереди, поддерживать товарищей).</li>
+                            <li>Формирование двух команд, выбор капитанов, придумывание названий.</li>
+                            <li>Изготовление эмблем для каждой команды.</li>
+                        </ul>
+                    </div>
+                    <div class="prep-card">
+                        <div class="prep-title">Подготовка площадки</div>
+                        <ul class="clean-list">
+                            <li>Осмотр территории: убрать камни, ветки, стёкла, выровнять поверхность.</li>
+                            <li>Разметка линий старта и финиша (мелом или яркой лентой/верёвкой).</li>
+                            <li>Расстановка конусов и оборудования по схеме.</li>
+                            <li>Проверка исправности инвентаря.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="subsection-title">Подготовка оборудования</h4>
+                <div class="equip-table">
+                    <div class="equip-row equip-header"><div class="equip-cell">Оборудование</div><div class="equip-cell">Количество</div></div>
+                    <div class="equip-row"><div class="equip-cell">Конусы</div><div class="equip-cell">8 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Мячи средние резиновые</div><div class="equip-cell">2 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Мячи малые (разноцветные)</div><div class="equip-cell">10–12 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Корзины или вёдра</div><div class="equip-cell">2 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Мешочки с песком (150–200 г)</div><div class="equip-cell">2 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Обручи большие</div><div class="equip-cell">2 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Кегли</div><div class="equip-cell">6 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Ленты цветные на финишную черту</div><div class="equip-cell">2 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Свисток</div><div class="equip-cell">1 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Музыкальная колонка</div><div class="equip-cell">1 шт.</div></div>
+                    <div class="equip-row"><div class="equip-cell">Медальки или грамоты</div><div class="equip-cell">по кол-ву детей</div></div>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Меры безопасности</h4>
+                <div class="safety-grid">
+                    <div class="safety-card">
+                        <div class="safety-title">До начала эстафеты</div>
+                        <ol class="safety-list">
+                            <li>Проверить площадку на отсутствие посторонних предметов (камни, стёкла, палки, ямы).</li>
+                            <li>Убедиться в исправности оборудования (конусы без трещин, мячи целые, кегли без сколов).</li>
+                            <li>Проверить одежду и обувь детей: обувь должна быть с фиксированной пяткой, нескользящей подошвой; одежда – не сковывать движения, без длинных завязок и шнурков.</li>
+                            <li>При жаркой погоде проверить наличие головных уборов у каждого ребёнка.</li>
+                        </ol>
+                    </div>
+                    <div class="safety-card">
+                        <div class="safety-title">Во время эстафеты</div>
+                        <ol class="safety-list">
+                            <li>Чётко обозначить линии старта и финиша, а также безопасные зоны ожидания для команд (не ближе 2 метров от беговой дорожки).</li>
+                            <li>Интервал между командами во время эстафет – не менее 3 метров, чтобы избежать столкновений.</li>
+                            <li>Конусы-ориентиры ставить на достаточном расстоянии друг от друга (не менее 1,5 метров), чтобы дети не сталкивались при обегании.</li>
+                            <li>Воспитатель или помощник находится рядом с наиболее сложными этапами для страховки.</li>
+                            <li>Следить за состоянием детей: при первых признаках утомления, покраснения лица, одышки – предложить ребёнку отдохнуть, попить воды.</li>
+                        </ol>
+                    </div>
+                    <div class="safety-card">
+                        <div class="safety-title">После эстафеты</div>
+                        <ol class="safety-list">
+                            <li>Провести спокойную ходьбу и дыхательные упражнения для восстановления пульса и дыхания.</li>
+                            <li>При необходимости – осмотреть детей на предмет ссадин, ушибов, обработать.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Ход проведения</h4>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">I</span><span class="part-name">Вводная часть (5 минут)</span></div>
+                    <div class="part-body">
+                        <p>Дети строятся на площадке в две колонны у линии старта.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Ребята, сегодня у нас необычный день — день весёлых стартов! Это праздник движения, скорости и дружбы. У нас две команды. Давайте поприветствуем друг друга!»</div></div>
+                        <p>Команды хором говорят свои названия и девизы (заранее выученные, простые).</p>
+
+                        <h5 class="exercise-subtitle">Разминка (2–3 минуты)</h5>
+                        <p>Воспитатель проводит короткую разминку под музыку:</p>
+                        <ul class="movement-list">
+                            <li><strong>Ходьба на месте</strong> – «Шагаем бодро» (20 секунд).</li>
+                            <li><strong>Повороты головы вправо-влево</strong> – «Смотрим по сторонам» (по 3 раза).</li>
+                            <li><strong>Поднимание плеч</strong> – «Удивляемся: ого-го!» (5 раз).</li>
+                            <li><strong>Наклоны вперёд</strong> – «Достаём до носочков» (5 раз).</li>
+                            <li><strong>Прыжки на двух ногах</strong> – «Прыгаем, как мячики» (15 секунд).</li>
+                            <li><strong>Вдох-выдох</strong> (3 раза).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">II</span><span class="part-name">Основная часть: эстафеты (20 минут)</span></div>
+                    <div class="part-body">
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 1. «Быстрые ножки» (беговая)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 конуса-ориентира на финише.<br><br><strong>Описание:</strong> по сигналу первый игрок бежит до конуса, обегает его, возвращается, передаёт эстафету хлопком по ладони. Чья команда быстрее.</div>
+                        </div>
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 2. «Пронеси – не урони» (на равновесие)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 мешочка с песком, 2 конуса.<br><br><strong>Описание:</strong> первый игрок кладёт мешочек на голову, разводит руки в стороны и идёт до конуса, стараясь не уронить. Если мешочек упал – поднять, положить и продолжить. За конусом берёт мешочек в руки и бегом возвращается, передаёт следующему.</div>
+                        </div>
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 3. «Собери урожай» (с малыми мячами)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 10–12 малых мячей, 2 корзины, 2 конуса.<br><br><strong>Описание:</strong> на площадке между стартом и финишем рассыпаны мячи («яблочки»). Первый игрок бежит с корзиной, подбирает один мяч, кладёт в корзину, обегает конус, возвращается, передаёт корзину следующему. Побеждает команда, собравшая больше мячей к концу эстафеты.</div>
+                        </div>
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 4. «Кенгуру» (прыжковая)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 мяча среднего размера, 2 конуса.<br><br><strong>Описание:</strong> первый игрок зажимает мяч между коленями и прыгает на двух ногах до конуса и обратно. Если мяч выпал – поднять, зажать и продолжить. У линии старта передаёт мяч в руки следующему.</div>
+                        </div>
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Эстафета 5. «Сбей кеглю» (на меткость)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 6 кеглей (по 3 на команду), 2 мяча среднего размера.<br><br><strong>Описание:</strong> на расстоянии 2–2,5 метров от линии старта для каждой команды расставлены 3 кегли. Первый игрок катит мяч по земле двумя руками, стараясь сбить кегли. Затем бежит, собирает сбитые кегли, расставляет их снова, забирает мяч и бегом возвращается, передаёт мяч следующему. Побеждает команда, сбившая больше кеглей за всю эстафету.</div>
+                        </div>
+                        <div class="obstacle-item">
+                            <div class="obstacle-name">Финальная эстафета 6. «Дружная цепочка» (командная)</div>
+                            <div class="obstacle-desc"><strong>Оборудование:</strong> 2 конуса на финише.<br><br><strong>Описание:</strong> вся команда встаёт в колонну и кладёт руки на плечи впереди стоящему. По сигналу «цепочка» бежит до конуса, огибает его и возвращается на место. Нельзя расцеплять руки. Чья команда вернётся первой, не разорвав цепочку.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-part">
+                    <div class="part-header"><span class="part-number">III</span><span class="part-name">Заключительная часть (5–7 минут)</span></div>
+                    <div class="part-body">
+                        <p>Дети строятся полукругом.</p>
+                        <div class="dialogue"><div class="speaker">Воспитатель:</div><div class="speech">«Ребята, вы большие молодцы! Все старались, бежали, прыгали, смеялись. Сегодня победила дружба! Обе команды показали, какие вы ловкие, быстрые и дружные».</div></div>
+                        <h5 class="exercise-subtitle">Дыхательное упражнение «Ветерок»</h5>
+                        <ul class="movement-list">
+                            <li>Вдох носом, руки вверх.</li>
+                            <li>Медленный выдох через рот, руки плавно опускаем.</li>
+                            <li>Повтор 3 раза.</li>
+                        </ul>
+                        <h5 class="exercise-subtitle">Награждение</h5>
+                        <p>Каждой команде вручаются грамоты или медальки. Можно добавить сладкие призы.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="diagnostics">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span class="section-title">Материалы для диагностики физического развития</span>
+                <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="section-content">
+                <div class="lesson-header-card">
+                    <div class="lesson-badges">
+                        <span class="lesson-badge">Средний дошкольный возраст (4–5 лет)</span>
+                        <span class="lesson-badge">4 диагностические пробы</span>
+                    </div>
+                    <h3 class="lesson-title">Диагностика физического развития</h3>
+                    <p style="margin-top: 12px; color: var(--text-secondary); font-size: 1rem;">Направленность: скоростно-силовые качества, координация, гибкость, статическое равновесие</p>
+                </div>
+
+                <div class="diag-card">
+                    <div class="diag-header">
+                        <span class="diag-number">1</span>
+                        <div><div class="diag-name">Бег на 30 метров</div><div class="diag-type">Скоростные качества</div></div>
+                    </div>
+                    <div class="diag-body">
+                        <div class="diag-goal"><strong>Цель:</strong> оценка быстроты и скоростной выносливости.</div>
+                        <div class="diag-equip"><strong>Оборудование:</strong> размеченная прямая дорожка длиной 30 метров, секундомер, конусы или флажки на старте и финише, свисток.</div>
+                        <h5 class="exercise-subtitle">Методика проведения</h5>
+                        <ol class="method-list">
+                            <li>На ровной площадке отмеряется прямая дистанция 30 метров. На линии старта и финиша ставятся яркие ориентиры.</li>
+                            <li>Ребёнок встаёт у линии старта в высокой стойке. Воспитатель стоит на линии финиша с секундомером.</li>
+                            <li>По команде «На старт! Внимание! Марш!» (со взмахом флажка или свистком) ребёнок бежит с максимальной скоростью до финиша.</li>
+                            <li>Секундомер включается по команде «Марш!» и выключается в момент пересечения ребёнком линии финиша.</li>
+                            <li>Проводится 2 попытки с перерывом на отдых 2–3 минуты. Фиксируется лучший результат (в секундах).</li>
+                        </ol>
+                        <h5 class="exercise-subtitle">Возрастные нормативы (4–5 лет)</h5>
+                        <div class="norm-table">
+                            <div class="norm-row norm-header"><div class="norm-cell">Уровень</div><div class="norm-cell">Мальчики</div><div class="norm-cell">Девочки</div></div>
+                            <div class="norm-row norm-high"><div class="norm-cell"><strong>Высокий</strong></div><div class="norm-cell">7,9 с и менее</div><div class="norm-cell">8,2 с и менее</div></div>
+                            <div class="norm-row norm-mid"><div class="norm-cell"><strong>Средний</strong></div><div class="norm-cell">8,0 – 9,0 с</div><div class="norm-cell">8,3 – 9,5 с</div></div>
+                            <div class="norm-row norm-low"><div class="norm-cell"><strong>Низкий</strong></div><div class="norm-cell">9,1 с и более</div><div class="norm-cell">9,6 с и более</div></div>
+                        </div>
+                        <h5 class="exercise-subtitle">Бланк фиксации результатов</h5>
+                        <div class="record-table-wrapper">
+                            <div class="record-table">
+                                <div class="record-row record-header"><div class="record-cell">Ф.И. ребёнка</div><div class="record-cell">Пол</div><div class="record-cell">Возраст</div><div class="record-cell">Попытка 1 (с)</div><div class="record-cell">Попытка 2 (с)</div><div class="record-cell">Лучший результат</div><div class="record-cell">Уровень</div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diag-card">
+                    <div class="diag-header">
+                        <span class="diag-number">2</span>
+                        <div><div class="diag-name">Прыжок в длину с места</div><div class="diag-type">Скоростно-силовые качества</div></div>
+                    </div>
+                    <div class="diag-body">
+                        <div class="diag-goal"><strong>Цель:</strong> оценка взрывной силы мышц ног и координации движений.</div>
+                        <div class="diag-equip"><strong>Оборудование:</strong> ровная площадка с нескользящим покрытием, размеченная сантиметровая лента или рулетка на полу (от линии старта до 150 см), мел для отметки линии отталкивания.</div>
+                        <h5 class="exercise-subtitle">Методика проведения</h5>
+                        <ol class="method-list">
+                            <li>На полу чертится линия отталкивания. Перпендикулярно ей приклеивается или кладётся сантиметровая лента (нулевая отметка совпадает с линией).</li>
+                            <li>Ребёнок встаёт у линии отталкивания: ноги на ширине плеч, носки перед линией (не заступая), руки опущены.</li>
+                            <li>По команде ребёнок делает полуприсед, отводит руки назад, затем резко выпрыгивает вперёд-вверх, помогая взмахом рук, и приземляется на две ноги.</li>
+                            <li>Замеряется расстояние от линии отталкивания до пятки ближней к линии ноги (по пятке, а не по носку).</li>
+                            <li>Проводится 3 попытки подряд. Фиксируется лучший результат (в сантиметрах).</li>
+                        </ol>
+                        <h5 class="exercise-subtitle">Возрастные нормативы (4–5 лет)</h5>
+                        <div class="norm-table">
+                            <div class="norm-row norm-header"><div class="norm-cell">Уровень</div><div class="norm-cell">Мальчики</div><div class="norm-cell">Девочки</div></div>
+                            <div class="norm-row norm-high"><div class="norm-cell"><strong>Высокий</strong></div><div class="norm-cell">85 см и более</div><div class="norm-cell">80 см и более</div></div>
+                            <div class="norm-row norm-mid"><div class="norm-cell"><strong>Средний</strong></div><div class="norm-cell">60 – 84 см</div><div class="norm-cell">55 – 79 см</div></div>
+                            <div class="norm-row norm-low"><div class="norm-cell"><strong>Низкий</strong></div><div class="norm-cell">59 см и менее</div><div class="norm-cell">54 см и менее</div></div>
+                        </div>
+                        <h5 class="exercise-subtitle">Бланк фиксации результатов</h5>
+                        <div class="record-table-wrapper">
+                            <div class="record-table">
+                                <div class="record-row record-header"><div class="record-cell">Ф.И. ребёнка</div><div class="record-cell">Пол</div><div class="record-cell">Возраст</div><div class="record-cell">Попытка 1 (см)</div><div class="record-cell">Попытка 2 (см)</div><div class="record-cell">Попытка 3 (см)</div><div class="record-cell">Лучший результат (см)</div><div class="record-cell">Уровень</div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diag-card">
+                    <div class="diag-header">
+                        <span class="diag-number">3</span>
+                        <div><div class="diag-name">Наклон вперёд из положения стоя на скамейке</div><div class="diag-type">Гибкость</div></div>
+                    </div>
+                    <div class="diag-body">
+                        <div class="diag-goal"><strong>Цель:</strong> оценка гибкости позвоночника и эластичности мышц задней поверхности бедра.</div>
+                        <div class="diag-equip"><strong>Оборудование:</strong> гимнастическая скамейка (высота 25–30 см), линейка или сантиметровая лента, закреплённая вертикально по краю скамейки (нулевая отметка на уровне плоскости скамейки, ниже – положительные значения, выше – отрицательные).</div>
+                        <h5 class="exercise-subtitle">Методика проведения</h5>
+                        <ol class="method-list">
+                            <li>Ребёнок встаёт на скамейку, ноги вместе, носки на уровне края скамейки.</li>
+                            <li>По команде ребёнок медленно наклоняется вперёд, не сгибая ног в коленях, и тянется кончиками пальцев обеих рук как можно ниже вдоль линейки.</li>
+                            <li>В крайней нижней точке нужно задержаться на 2 секунды. Воспитатель фиксирует результат по кончикам пальцев (в сантиметрах).</li>
+                            <li>Если кончики пальцев оказались ниже уровня скамейки – результат положительный (+), если не достали до края – отрицательный (-).</li>
+                            <li>Проводится 2 попытки. Фиксируется лучший результат.</li>
+                        </ol>
+                        <h5 class="exercise-subtitle">Возрастные нормативы (4–5 лет)</h5>
+                        <div class="norm-table">
+                            <div class="norm-row norm-header"><div class="norm-cell">Уровень</div><div class="norm-cell">Мальчики</div><div class="norm-cell">Девочки</div></div>
+                            <div class="norm-row norm-high"><div class="norm-cell"><strong>Высокий</strong></div><div class="norm-cell">+6 см и более</div><div class="norm-cell">+8 см и более</div></div>
+                            <div class="norm-row norm-mid"><div class="norm-cell"><strong>Средний</strong></div><div class="norm-cell">0 до +5 см</div><div class="norm-cell">+1 до +7 см</div></div>
+                            <div class="norm-row norm-low"><div class="norm-cell"><strong>Низкий</strong></div><div class="norm-cell">-1 см и менее</div><div class="norm-cell">0 см и менее</div></div>
+                        </div>
+                        <h5 class="exercise-subtitle">Бланк фиксации результатов</h5>
+                        <div class="record-table-wrapper">
+                            <div class="record-table">
+                                <div class="record-row record-header"><div class="record-cell">Ф.И. ребёнка</div><div class="record-cell">Пол</div><div class="record-cell">Возраст</div><div class="record-cell">Попытка 1 (см)</div><div class="record-cell">Попытка 2 (см)</div><div class="record-cell">Лучший результат (см)</div><div class="record-cell">Уровень</div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diag-card">
+    <div class="diag-header">
+        <span class="diag-number">4</span>
+        <div>
+            <div class="diag-name">Стойка на одной ноге</div>
+            <div class="diag-type">Статическое равновесие</div>
+        </div>
+    </div>
+    <div class="diag-body">
+        <div class="diag-goal">
+            <strong>Цель:</strong> оценка способности удерживать статическое равновесие.
+        </div>
+        <div class="diag-equip">
+            <strong>Оборудование:</strong> секундомер, ровная нескользящая поверхность.
+        </div>
+        
+        <h5 class="exercise-subtitle">Методика проведения</h5>
+        <ol class="steps-list">
+            <li>Ребёнок стоит прямо, руки на поясе.</li>
+            <li>По команде «Начали!» ребёнок сгибает одну ногу в колене и ставит стопу на внутреннюю сторону голени опорной ноги (поза «цапля»). Глаза открыты.</li>
+            <li>Секундомер включается в момент отрыва ноги от пола.</li>
+            <li>
+                Секундомер выключается, когда:
+                <ul class="sub-list">
+                <li>ребёнок опускает поднятую ногу на пол;</li>
+                    <li>сходит с места опорной ногой;</li>
+                    <li>убирает руки с пояса;</li>
+                    <li>открывает глаза (если давалась инструкция закрыть — но для 4–5 лет глаза открыты).</li>
+                </ul>
+            </li>
+            <li>Проводится по 2 попытки на правой и левой ноге. Фиксируется лучший результат для каждой ноги (в секундах), затем вычисляется среднее значение.</li>
+        </ol>
+        
+        
+        <h5 class="exercise-subtitle">Возрастные нормативы (4–5 лет)</h5>
+        <div class="norm-table">
+            <div class="norm-row norm-header">
+                <div class="norm-cell">Уровень</div>
+                <div class="norm-cell">Мальчики</div>
+                <div class="norm-cell">Девочки</div>
+            </div>
+            <div class="norm-row norm-high">
+                <div class="norm-cell"><strong>Высокий</strong></div>
+                <div class="norm-cell">12 с и более</div>
+                <div class="norm-cell">15 с и более</div>
+            </div>
+            <div class="norm-row norm-mid">
+                <div class="norm-cell"><strong>Средний</strong></div>
+                <div class="norm-cell">5 – 11 с</div>
+                <div class="norm-cell">7 – 14 с</div>
+            </div>
+            <div class="norm-row norm-low">
+                <div class="norm-cell"><strong>Низкий</strong></div>
+                <div class="norm-cell">4 с и менее</div>
+                <div class="norm-cell">6 с и менее</div>
+            </div>
+        </div>
+        
+        <h5 class="exercise-subtitle">Бланк фиксации результатов</h5>
+        <div class="record-table-wrapper">
+            <div class="record-table">
+                <div class="record-row record-header">
+                    <div class="record-cell">Ф.И. ребёнка</div>
+                    <div class="record-cell">Пол</div>
+                    <div class="record-cell">Возраст</div>
+                    <div class="record-cell">Правая нога (с)</div>
+                    <div class="record-cell">Левая нога (с)</div>
+                    <div class="record-cell">Средний результат (с)</div>
+                    <div class="record-cell">Уровень</div>
+                </div>
+                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                <div class="record-row"><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div><div class="record-cell"></div></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="section-block" id="gymnastics">
             <div class="section-header" onclick="toggleSection(this)">
                 <span class="section-title">Комплексы утренней гимнастики</span>
@@ -1074,27 +1860,145 @@
             </div>
         </div>
 
-        <div class="section-block" id="about">
+        <div class="section-block" id="parents">
             <div class="section-header" onclick="toggleSection(this)">
-                <span class="section-title">Обо мне</span>
+                <span class="section-title">Памятка для родителей</span>
                 <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="section-content">
-                <p>Здесь будет ваш текст. Я дизайнер и разработчик, увлеченный созданием удобных и эстетичных цифровых продуктов. Этот блок уже открыт по умолчанию, чтобы приветствовать посетителя.</p>
-                <h4 class="subsection-title">Мои навыки</h4>
-                <p>Здесь появится список ваших технологий, инструментов и мягких навыков (soft skills). Просто отправьте мне этот текст, и я красиво его оформлю.</p>
-                <h4 class="subsection-title">Проекты</h4>
-                <p>Описание ваших лучших работ будет здесь.</p>
+                <div class="lesson-header-card">
+                    <div class="lesson-badges">
+                        <span class="lesson-badge">Для родителей</span>
+                        <span class="lesson-badge">Средний дошкольный возраст</span>
+                        <span class="lesson-badge">ЗПР</span>
+                    </div>
+                    <h3 class="lesson-title">«Двигаемся, играем и растём здоровыми!»</h3>
+                    <p style="margin-top: 12px; color: var(--text-secondary); font-size: 1rem;">Рекомендации для родителей ребёнка среднего дошкольного возраста с задержкой психического развития</p>
+                </div>
+
+                <div class="parent-card parent-card-1">
+                    <div class="parent-header"><span class="parent-number">1</span><div class="parent-title">Превращаем движение в ежедневный ритуал</div></div>
+                    <div class="parent-body">
+                        <p class="parent-intro">Главное правило – регулярность и эмоциональная вовлечённость, а не сложность упражнений. Утренняя гимнастика должна быть короткой (5–7 минут) и обязательно проходить в игровой форме.</p>
+                        <div class="parent-tip"><div class="tip-label">Не говорите:</div><div class="tip-text">«Делаем наклоны»</div></div>
+                        <div class="parent-tip parent-tip-good"><div class="tip-label">Скажите:</div><div class="tip-text">«Давай как зайчики соберём морковку с пола»</div></div>
+                        <ul class="parent-list">
+                            <li><strong>Используйте подражание:</strong> «Покажи, как мишка ходит», «Похлопай крыльями, как петушок».</li>
+                            <li><strong>Если ребёнок отказывается – не давите.</strong> Предложите просто походить «как солдатики» или «как кошечки на носочках».</li>
+                        </ul>
+                        <div class="parent-note">Ваш спокойный доброжелательный тон – половина успеха.</div>
+                    </div>
+                </div>
+
+                <div class="parent-card parent-card-2">
+                    <div class="parent-header"><span class="parent-number">2</span><div class="parent-title">Организуем безопасное пространство для движений</div></div>
+                    <div class="parent-body">
+                        <p class="parent-intro">Дети с ЗПР часто неловки в движениях, могут не заметить препятствие или не рассчитать силу и траекторию. Поэтому пространство дома должно быть предсказуемым и травмобезопасным.</p>
+                        <ul class="parent-list">
+                            <li>Уберите с пола провода, скользящие коврики, предметы, о которые можно споткнуться.</li>
+                            <li>Острые углы мебели – под защитные накладки.</li>
+                            <li>Оборудуйте дома «спортивный уголок» в отдельной зоне, а не в проходе: мягкий мат или толстый ковёр, небольшой массажный коврик, 1–2 ярких предмета для игр (обруч, мяч, мешочек с крупой).</li>
+                            <li>Занятия проводите в одно и то же время. Предсказуемость режима снижает тревожность ребёнка и улучшает принятие физической нагрузки.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="parent-card parent-card-3">
+                    <div class="parent-header"><span class="parent-number">3</span><div class="parent-title">Осваиваем закаливание без стресса и слез</div></div>
+                    <div class="parent-body">
+                        <p class="parent-intro">При ЗПР нервная система быстро истощается, поэтому ударное закаливание (обливание ледяной водой) категорически не подходит. Используем только мягкие, щадящие методы – контрастные температуры лёгкой степени.</p>
+                        <div class="parent-method"><div class="method-name">🦶 Хождение босиком</div><div class="method-desc">Начинаем ходить босиком по ковру, затем – по специальному массажному коврику, затем (летом) – по тёплой траве или песку. Это стимулирует нервные окончания стопы и развивает мозг.</div></div>
+                        <div class="parent-method"><div class="method-name">💧 Умывание прохладной водой</div><div class="method-desc">Умываем лицо и моем руки до локтя водой комнатной температуры, постепенно (раз в 3–4 дня) снижая температуру на 1 градус, но не ниже 18°С.</div></div>
+                        <div class="parent-method"><div class="method-name">🌬️ Проветривание</div><div class="method-desc">Активные игры проводим в хорошо проветренной комнате, но без сквозняков. Ребёнок при этом одет легко.</div></div>
+                        <div class="parent-warning"><strong>Важно:</strong> начинаем закаливание ТОЛЬКО когда ребёнок здоров и в хорошем настроении.</div>
+                    </div>
+                </div>
+
+                <div class="parent-card parent-card-4">
+                    <div class="parent-header"><span class="parent-number">4</span><div class="parent-title">Играем всей семьёй: специальные подвижные игры</div></div>
+                    <div class="parent-body">
+                        <p class="parent-intro">Игры – главный двигатель развития. Для ребёнка с ЗПР они должны быть с простыми правилами, без сложных словесных инструкций и без проигравших (хотя бы на первых порах). Важно не оценивать, а просто быть вместе и веселиться.</p>
+                        <div class="game-example"><div class="game-example-title">«Повторяй за мной»</div><div class="game-example-desc">Мама или папа показывает простое движение под медленный счёт или ритмичный стишок (хлопок, прыжок на двух ногах, наклон), а ребёнок за взрослым повторяет. Можно использовать любимые игрушки: «Смотри, мишка тоже делает зарядку! Давай с мишкой вместе!»</div></div>
+                        <div class="game-example"><div class="game-example-title">«Тише-громче»</div><div class="game-example-desc">Под удары в ладоши: громкий и редкий удар – делаем большие шаги (как великан), тихие и частые удары – бежим на носочках (как мышки). Игра отлично развивает слуховое внимание и контроль движений.</div></div>
+                        <div class="game-example"><div class="game-example-title">«Паровозик с препятствиями»</div><div class="game-example-desc">Взрослый – «паровоз», ребёнок – «вагончик», держится за плечи или талию. Вместе двигаемся по комнате, «объезжаем» разложенные подушки, наклоняемся под натянутой верёвочкой. Здорово, если к игре присоединятся братья, сёстры или бабушка с дедушкой. Семейная игра – лучшая мотивация.</div></div>
+                    </div>
+                </div>
+
+                <div class="parent-card parent-card-5">
+                    <div class="parent-header"><span class="parent-number">5</span><div class="parent-title">Учитываем особый темп ребёнка: дозируем нагрузку и хвалим</div></div>
+                    <div class="parent-body">
+                        <ul class="parent-list">
+                            <li><strong>Чередуйте активность с паузами:</strong> 3–5 минут движения – пауза (посидеть, полежать, попить воды).</li>
+                            <li><strong>Не сравнивайте его с другими детьми.</strong> Сравнивайте его только с ним самим вчерашним: «Смотри, сегодня ты пропрыгал на двух ногах целых 4 раза, а вчера было 3! Как здорово!».</li>
+                            <li><strong>Замечайте и озвучивайте ЛЮБОЙ успех:</strong> «Как ловко ты пролез под стулом!».</li>
+                        </ul>
+                        <div class="parent-warning">Если ребёнок устал, перевозбудился или отказывается – это не каприз, а сигнал перегрузки нервной системы. Спокойно прекратите игру, обнимите, переключите на тихое занятие (полепить, порисовать).</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="section-block" id="contacts">
+        <div class="section-block" id="conclusion">
             <div class="section-header" onclick="toggleSection(this)">
-                <span class="section-title">Контакты</span>
+                <span class="section-title">Заключение и самоанализ</span>
                 <svg class="arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="section-content">
-                <p>Ваши ссылки на соцсети, почта и форма обратной связи.</p>
+                <div class="conclusion-intro">Работа над портфолио позволила мне прожить полный цикл профессиональной деятельности дошкольного дефектолога в области физического развития детей с ОВЗ – от проектирования игр и занятий до диагностики и взаимодействия с родителями.</div>
+
+                <h4 class="subsection-title">Что удалось отразить</h4>
+                <p style="margin-bottom: 20px; color: var(--text-secondary); line-height: 1.7;">В процессе работы я на практике применила четыре ключевые компетенции.</p>
+
+                <div class="competence-grid">
+                    <div class="competence-card competence-1">
+                        <div class="competence-header"><span class="competence-number">1</span><div class="competence-title">Адаптация содержания под особые потребности детей</div></div>
+                        <div class="competence-body">
+                            <p>Это стало главным стержнем всей работы. Для каждой игры, гимнастики и праздника я разрабатывала конкретные приёмы под определённую нозологию: визуальные карточки для ребёнка с РАС, индивидуальный способ передвижения при ДЦП, замена бега на шаг для часто болеющих детей.</p>
+                            <div class="competence-insight">Я поняла главный принцип: <strong>не упрощать до бессмысленности, а выстраивать индивидуальный маршрут внутри общей деятельности.</strong></div>
+                        </div>
+                    </div>
+                    <div class="competence-card competence-2">
+                        <div class="competence-header"><span class="competence-number">2</span><div class="competence-title">Проектирование коррекционно-развивающей среды</div></div>
+                        <div class="competence-body">
+                            <p>При составлении сценариев праздника и эстафеты я продумывала не только конкурсы, но и организацию пространства: безопасное расположение команд, обзорность сигналов, доступность инвентаря и исключение потенциально травматичных заданий.</p>
+                        </div>
+                    </div>
+                    <div class="competence-card competence-3">
+                        <div class="competence-header"><span class="competence-number">3</span><div class="competence-title">Педагогическая диагностика</div></div>
+                        <div class="competence-body">
+                            <p>Подбор диагностических проб и оформление бланков фиксации результатов научили меня видеть за цифрами реальные дефициты ребёнка.</p>
+                            <div class="competence-insight">Низкий результат в равновесии – это не просто цифра, а <strong>возможный маркер незрелости вестибулярной системы</strong>, и это влияет на подбор дальнейших упражнений.</div>
+                        </div>
+                    </div>
+                    <div class="competence-card competence-4">
+                        <div class="competence-header"><span class="competence-number">4</span><div class="competence-title">Работа с родителями</div></div>
+                        <div class="competence-body">
+                            <p>В памятке для семьи ребёнка с ЗПР я училась переводить профессиональные знания на доступный язык, сохраняя достоверность рекомендаций и предлагая конкретные, выполнимые в домашних условиях приёмы.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Что было самым сложным</h4>
+                <div class="challenge-block">
+                    <div class="challenge-label">Главный вызов</div>
+                    <p class="challenge-text">Труднее всего оказалось удерживать баланс между увлекательностью и коррекционной направленностью. Хотелось либо уйти в развлечение, забыв о задачах, либо сделать обычную лечебную гимнастику.</p>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Ценность портфолио для профессии</h4>
+                <div class="value-list">
+                    <div class="value-item"><div class="value-icon">📚</div><div class="value-text"><strong>Картотека игр с адаптациями</strong> – готовый инструмент для включения ребёнка с ОВЗ в коллективную деятельность.</div></div>
+                    <div class="value-item"><div class="value-icon">📅</div><div class="value-text"><strong>Сценарии гимнастики, праздника и эстафеты</strong> – база для календарного планирования, которую можно привязывать к лексическим темам.</div></div>
+                    <div class="value-item"><div class="value-icon">📊</div><div class="value-text"><strong>Диагностические пробы и бланки</strong> – комплект для отслеживания динамики развития и подготовки заключений.</div></div>
+                    <div class="value-item"><div class="value-icon">👨‍👩👧</div><div class="value-text"><strong>Памятка для родителей</strong> – готовый материал для консультаций и родительских собраний.</div></div>
+                </div>
+
+                <h4 class="subsection-title" style="margin-top: 35px;">Список используемых источников</h4>
+                <div class="intro-block sources-block">
+                    <ol class="sources-list">
+                        <li>Антошина К.В. Картотека подвижных игр для дошкольников / Антошина К.В. [Электронный ресурс] // nsportal.ru: [сайт]. — <a href="https://nsportal.ru/detskiy-sad/zdorovyy-obraz-zhizni/2016/01/10/kartoteka-podvizhnyh-igr-dlya-doshkolnikov" target="_blank">URL</a> <span class="source-date">(дата обращения: 12.06.2026).</span></li>
+                        <li>Курышкина Л.Я. Диагностика физического развития дошкольников / Курышкина Л.Я. [Электронный ресурс] // nsportal.ru: [сайт]. — <a href="https://nsportal.ru/detskiy-sad/fizkultura/2017/05/30/diagnostika-fizicheskogo-razvitiya-doshkolnikov" target="_blank">URL</a> <span class="source-date">(дата обращения: 12.06.2026).</span></li>
+                    </ol>
+                </div>
             </div>
         </div>
 
